@@ -19,23 +19,23 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, steps
           <div key={index} className="flex items-center">
             <div className="flex flex-col items-center">
               <div
-                className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-500 shadow-lg ${
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 shadow-sm ${
                   index < currentStep
-                    ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-green-200'
+                    ? 'bg-gradient-to-r from-green-500 to-green-600 text-white'
                     : index === currentStep
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-blue-200 scale-110'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white scale-105'
                     : 'bg-gray-100 text-gray-500 border-2 border-gray-200'
                 }`}
               >
                 {index < currentStep ? (
-                  <Check className="w-6 h-6" />
+                  <Check className="w-3 h-3" />
                 ) : index === currentStep ? (
-                  <Circle className="w-6 h-6 fill-current" />
+                  <Circle className="w-3 h-3 fill-current" />
                 ) : (
-                  <span className="text-lg">{index + 1}</span>
+                  <span className="text-xs">{index + 1}</span>
                 )}
               </div>
-              <span className={`mt-3 text-sm font-semibold text-center max-w-20 leading-tight ${
+              <span className={`mt-1 text-xs font-medium text-center max-w-12 leading-tight ${
                 index < currentStep 
                   ? 'text-green-700' 
                   : index === currentStep 
@@ -47,7 +47,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, steps
             </div>
             {index < steps.length - 1 && (
               <div
-                className={`w-16 h-2 mx-6 rounded-full transition-all duration-500 ${
+                className={`w-8 h-1 mx-2 rounded-full transition-all duration-500 ${
                   index < currentStep 
                     ? 'bg-gradient-to-r from-green-500 to-green-600' 
                     : 'bg-gray-200'
