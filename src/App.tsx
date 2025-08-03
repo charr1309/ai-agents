@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Briefcase, FileText, TrendingUp, Users, DollarSign, Target, Download, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Briefcase, FileText, TrendingUp, Users, DollarSign, Target, Download, ArrowLeft, ArrowRight, Sparkles, Zap } from 'lucide-react';
 import { BusinessPlanWizard } from './components/BusinessPlanWizard';
 import { BusinessPlanPreview } from './components/BusinessPlanPreview';
 import { Header } from './components/Header';
@@ -50,21 +50,40 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-6">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 rounded-2xl shadow-lg">
+                <Sparkles className="h-12 w-12 text-white" />
+              </div>
+            </div>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
               AI Business Plan Generator
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Generate professional, comprehensive business plans in minutes using our advanced AI technology
             </p>
+            <div className="flex items-center justify-center mt-6 space-x-6">
+              <div className="flex items-center space-x-2 text-sm text-gray-500">
+                <Zap className="w-4 h-4 text-blue-500" />
+                <span>AI-Powered</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-gray-500">
+                <FileText className="w-4 h-4 text-blue-500" />
+                <span>Professional Quality</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-gray-500">
+                <Target className="w-4 h-4 text-blue-500" />
+                <span>Investor Ready</span>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
             <BusinessPlanWizard
               currentStep={currentStep}
               businessData={businessData}
